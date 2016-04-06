@@ -10,7 +10,7 @@ import android.widget.TextView;
  */
 public class GameActivity extends Activity{
 
-    HandMath handmathobj = new HandMath();
+    HandMath handmathobj = new HandMath();                                                   //create the card dealer singleton if available
     private int Usertotalint = 0;
     private int Dealertotalint = 0;
     private boolean Userbust =false;
@@ -33,7 +33,7 @@ public class GameActivity extends Activity{
         String usertotalstr = usertot.getText().toString();
         Usertotalint = Integer.parseInt(usertotalstr);
 
-        Usertotalint = Usertotalint + handmathobj.addUserTotal(Usertotalint);
+        Usertotalint = Usertotalint + handmathobj.addCardTotal(Usertotalint);
         String displayer = Integer.toString(Usertotalint);
         usertot.setText(displayer);
 
@@ -50,7 +50,7 @@ public class GameActivity extends Activity{
 
     while(Dealertotalint <= 16){
 
-        Dealertotalint = Dealertotalint + handmathobj.addUserTotal(Dealertotalint);
+        Dealertotalint = Dealertotalint + handmathobj.addCardTotal(Dealertotalint);
 
         String dealerdisplayer = Integer.toString(Dealertotalint);
         dealertot.setText(dealerdisplayer);
@@ -84,8 +84,8 @@ public class GameActivity extends Activity{
         String usertotalstr = usertot.getText().toString();
         Usertotalint = Integer.parseInt(usertotalstr);
 
-        Usertotalint = Usertotalint + handmathobj.addUserTotal(Usertotalint);
-        Usertotalint = Usertotalint + handmathobj.addUserTotal(Usertotalint);
+        Usertotalint = Usertotalint + handmathobj.addCardTotal(Usertotalint);
+        Usertotalint = Usertotalint + handmathobj.addCardTotal(Usertotalint);
 
         String userdisplayer = Integer.toString(Usertotalint);
         usertot.setText(userdisplayer);
@@ -93,7 +93,7 @@ public class GameActivity extends Activity{
         String dealertotalstr = dealertot.getText().toString();
         Dealertotalint = Integer.parseInt(dealertotalstr);
 
-        Dealertotalint = Dealertotalint + handmathobj.addUserTotal(Dealertotalint);
+        Dealertotalint = Dealertotalint + handmathobj.addCardTotal(Dealertotalint);
 
         String dealerdisplayer = Integer.toString(Dealertotalint);
         dealertot.setText(dealerdisplayer);
